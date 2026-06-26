@@ -1,0 +1,33 @@
+### busacr profissionais
+GET http://localhost:3000/profissionais
+
+### buscar profissional por id
+GET http://localhost:3000/profissionais/7
+
+### criar profissionais
+POST http://localhost:3000/profissionais
+Content-Type: application/json
+
+{
+    "nome": "João Silva",
+    "email": "bruno.oliveira@agendaprobeauty.c",
+    "telefone": "(54) 99911-1002",
+    "especialidade": "Engenheiro de Software"
+}
+
+#### atualizar profissional
+PUT http://localhost:3000/profissionais/6
+Content-Type: application/json
+
+{
+    "nome": "João Silva",
+    "email": "jordo.ribeiro@agendaprobeauty.com",
+    "telefone": "(54) 99911-100",
+    "especialidade": "Engenheiro de Software"
+}
+
+### apagar profissional por id
+DELETE http://localhost:3000/profissionais/7
+
+#### buscar profissional por email
+GET http://localhost:3000/profissionais/email/eduardo.ribeiro@agendaprobeauty.com

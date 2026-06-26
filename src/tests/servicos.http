@@ -1,0 +1,32 @@
+### buscar_servicos
+GET http://localhost:3000/servicos
+
+### buscar_servico_por_id
+GET http://localhost:3000/servicos/16
+
+### buscar_servicos_por_area
+GET http://localhost:3000/servicos/area/1
+
+#### criar_servico
+POST http://localhost:3000/servicos
+Content-Type: application/json
+
+{
+    "nome": "Serviço de Teste",
+    "area_id": 1,
+    "preco": 100.00,
+    "duracao_min": 60
+}
+#### atualizar_servico
+PUT http://localhost:3000/servicos/16
+Content-Type: application/json
+
+{
+    "nome": "Serviço de Teste Atualizado",
+    "area_id": 1,
+    "preco": 150.00,
+    "duracao_min": 90
+}
+
+### deletar_servico
+DELETE http://localhost:3000/servicos/16

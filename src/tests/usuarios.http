@@ -10,8 +10,8 @@ POST http://localhost:3000/usuarios/
 Content-Type: application/json
 
 {
-  "nome": "Davi Rodrigues de Almeida",
-  "email": "davirralmeida@gmail.com",
+  "nome": "Davi Rodrigues de AlmeidaDavi Rodrigues de AlmeidaDavi Rodrigues de AlmeidaDavi Rodrigues de AlmeidaDavi Rodrigues de AlmeidaDavi Rodrigues de AlmeidaDavi Rodrigues de AlmeidaDavi Rodrigues de AlmeidaDavi Rodrigues de AlmeidaDavi Rodrigues de AlmeidaDavi Rodrigues de AlmeidaDavi Rodrigues de Almeida",
+  "email": "davirralmeida@gmails.com",
   "senha_hash": "12345678",
   "nivel_acesso_id": "1"
 }
@@ -23,7 +23,7 @@ Content-Type: application/json
 {
   "nome": "Davi Rodrigues de Almeidas",
   "email": "davirralmeida@gmail.com",
-#   "senha_hash": "12345678",
+  "senha_hash": "12345678",
   "nivel_acesso_id": "1"
 }
 

@@ -43,7 +43,8 @@ class UsuariosController {
         }catch(error){
             return res.status(500).json({
                 sucesso: false,
-                erro: error.message
+                erro: error.message,
+                erros: error.erros || null
             });
         }
     }

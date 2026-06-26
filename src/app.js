@@ -2,8 +2,9 @@ const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
 
-const userRoutes = require('./routes/userRoutes');
-const errorMiddleware = require('./middlewares/errorMiddleware');
+// console.log("oi")
+const usuarios_routes = require('./routes/usuarios');
+// const errorMiddleware = require('./middlewares/errorMiddleware');
 
 const app = express();
 
@@ -11,8 +12,8 @@ app.use(cors());
 app.use(helmet());
 app.use(express.json());
 
-app.use('/users', userRoutes);
+app.use('/usuarios', usuarios_routes);
 
-app.use(errorMiddleware);
+// app.use(errorMiddleware);
 
 module.exports = app;

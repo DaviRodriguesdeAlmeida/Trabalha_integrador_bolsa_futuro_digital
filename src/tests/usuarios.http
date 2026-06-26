@@ -1,0 +1,31 @@
+@token = 12345678910
+### buscar todos os usuarios
+GET http://localhost:3000/usuarios/
+
+### buscar usuario por id
+GET http://localhost:3000/usuarios/10
+
+### criar usuario
+POST http://localhost:3000/usuarios/
+Content-Type: application/json
+
+{
+  "nome": "Davi Rodrigues de Almeida",
+  "email": "davirralmeida@gmail.com",
+  "senha_hash": "12345678",
+  "nivel_acesso_id": "1"
+}
+
+### atualizar usuario
+PUT http://localhost:3000/usuarios/10
+Content-Type: application/json
+
+{
+  "nome": "Davi Rodrigues de Almeidas",
+  "email": "davirralmeida@gmail.com",
+#   "senha_hash": "12345678",
+  "nivel_acesso_id": "1"
+}
+
+### deletar usuario
+DELETE http://localhost:3000/usuarios/10

@@ -1,7 +1,7 @@
 -- USE AGENDA_PRO_BEAUTY;;
 -- Senha padrão dos usuários: 123456
 -- Hash gerado com password_hash('123456', PASSWORD_BCRYPT) no PHP.
-
+use AGENDA_PRO_BEAUTY;
 INSERT INTO nivel_acesso (id, nome) VALUES
 (1, 'admin'),
 (2, 'atendente'),
@@ -117,11 +117,11 @@ INSERT INTO horarios_trabalho (id, profissional_id, dia_semana, hora_inicio, hor
 (33, 6, 4, '13:00:00', '18:00:00');
 
 INSERT INTO horarios_bloqueados (id, profissional_id, inicio, fim, motivo) VALUES
-(1, 1, '2026-07-08 13:00:00', '2026-07-08 15:00:00', 'Reunião interna'),
-(2, 2, '2026-07-09 10:00:00', '2026-07-09 12:00:00', 'Treinamento profissional'),
-(3, 3, '2026-07-10 08:00:00', '2026-07-10 10:00:00', 'Manutenção da sala de estética'),
-(4, 4, '2026-07-11 09:00:00', '2026-07-11 13:00:00', 'Folga solicitada'),
-(5, 5, '2026-07-07 16:00:00', '2026-07-07 17:00:00', 'Consulta particular');
+(1, 1, '2026-07-06 14:00:00', '2026-07-06 15:00:00', 'Consulta médica'),
+(2, 2, '2026-07-06 10:00:00', '2026-07-06 12:00:00', 'Treinamento profissional'),
+(3, 3, '2026-07-06 08:00:00', '2026-07-06 10:00:00', 'Manutenção da sala de estética'),
+(4, 4, '2026-07-06 09:00:00', '2026-07-06 13:00:00', 'Folga solicitada'),
+(5, 5, '2026-07-06 16:00:00', '2026-07-06 17:00:00', 'Consulta particular');
 
 INSERT INTO status_agendamento (id, nome) VALUES
 (1, 'Aguardando confirmação'),

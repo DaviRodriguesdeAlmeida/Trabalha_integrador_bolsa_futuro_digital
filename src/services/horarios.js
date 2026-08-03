@@ -43,8 +43,10 @@ class HorariosService {
         if (!horarios || !horarios.dia_semana || !horarios.hora_inicio || !horarios.hora_fim) {
             throw new Error('Dados de horários incompletos');
         }
-        if (horarios.hora_inicio >= horarios.hora_fim) {
-            throw new Error('O horário de início deve ser anterior ao horário de fim');
+        if (new Date(horarios.hora_inicio) >= new Date(horarios.hora_fim)) {
+            console.log('Horário de início:', horarios.hora_inicio);
+            console.log('Horário de fim:', horarios.hora_fim);
+            throw new Error('O horário de início deve ser anterior ao horárioaaa de fim');
         }
         const conflito = await HorariosService.buscar_horario_conflito(id, horarios);
         if (conflito.length > 0) {

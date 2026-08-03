@@ -2,7 +2,7 @@
 POST http://localhost:3000/horarios/normal
 Content-Type: application/json
 
-{ "dia_semana": "Segunda-feira", "hora_inicio": "09:00", "hora_fim": "17:00", "profissional_id": 1 }
+{ "dia_semana": "Segunda-feira", "hora_inicio": "06:00", "hora_fim": "18:00", "profissional_id": 1 }
 
 ### buscar horarios por profissional
 GET http://localhost:3000/horarios/normal/1
@@ -14,7 +14,7 @@ GET http://localhost:3000/horarios/bloqueado/1
 POST http://localhost:3000/horarios/bloqueado
 Content-Type: application/json
 
-{ "profissional_id": 1, "inicio": "2026-07-06 12:00:00", "fim": "2026-07-06 13:00:00", "motivo": "Consulta médica" }
+{ "profissional_id": 1, "inicio": "2026-07-06 10:10:00", "fim": "2026-07-06 15:50:00", "motivo": "Consulta médica" }
 
-### buscar horarios bloqueados por profissional
+### buscar horarios disponiveis filtrados
 GET http://localhost:3000/horarios/disponivel/1?data=2026-07-06

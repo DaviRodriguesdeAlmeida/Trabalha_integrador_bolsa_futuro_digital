@@ -1,4 +1,5 @@
 const HorariosModel = require('../models/horarios.js');
+const AgendamentosModel = require('../models/agendamentos.js');
 const filtrar_horarios_disponiveis = require('../utils/horarios_disponiveis.js');
 
 class HorariosService {
@@ -20,8 +21,20 @@ class HorariosService {
 
         const horarios_bloqueados = await HorariosModel.buscar_horario_bloqueado_por_data(id, data);
         const horarios_trabalho = await HorariosModel.buscar_horarios_por_profissional_id(id);
+        const agendamentos = await AgendamentosModel.buscar_agendamentos_ativos_por_data(id, data);
 
-        const horarios_neste_dia = await filtrar_horarios_disponiveis(horarios_trabalho, horarios_bloqueados, data);
+        const horarios_ocupados = agendamentos.map(agendamento => ({
+            inicio: agendamento.data_hora_inicio,
+            fim: agendamento.data_hora_fim
+        }));
+
+        const bloqueios_e_agendamentos = [...horarios_bloqueados, ...horarios_ocupados];
+
+        const horarios_neste_dia = await filtrar_horarios_disponiveis(
+            horarios_trabalho,
+            bloqueios_e_agendamentos,
+            data
+        );
         return horarios_neste_dia;
     }
     

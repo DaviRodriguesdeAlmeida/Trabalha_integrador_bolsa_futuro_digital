@@ -19,6 +19,13 @@ function formatar_data_hora(data) {
   );
 }
 
+// SPRINT 4:
+// Ao calcular a disponibilidade, os agendamentos ativos do profissional também devem ser
+// considerados como intervalos ocupados, junto com os horários bloqueados manualmente.
+// Agendamentos com status Cancelado ou Reagendado não devem bloquear novos horários.
+// O cálculo também deverá receber a duração do serviço escolhido e retornar somente inícios
+// em que o serviço inteiro caiba antes do fim do expediente.
+
 function filtrar_horarios_disponiveis( horarios_trabalho, horarios_bloqueados, data) {
   const [ano, mes, dia] = data.split("-").map(Number);
 

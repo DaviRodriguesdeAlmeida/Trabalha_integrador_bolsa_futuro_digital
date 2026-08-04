@@ -1,0 +1,46 @@
+### listar todos
+GET http://localhost:3000/agendamentos
+
+### listar por usuario
+GET http://localhost:3000/agendamentos?usuario_id=3
+
+### listar por profissional e status
+GET http://localhost:3000/agendamentos?profissional_id=1&status=Confirmado
+
+### buscar por id
+GET http://localhost:3000/agendamentos/1
+
+### concluir agendamento
+PUT http://localhost:3000/agendamentos/1/concluir
+
+### cancelar agendamento
+PUT http://localhost:3000/agendamentos/11/cancelar
+
+### reagendar agendamento
+PUT http://localhost:3000/agendamentos/1/reagendar
+Content-Type: application/json
+
+{
+    "data_hora_inicio": "2026-08-10 10:00:00"
+}
+### criar agendamento
+POST http://localhost:3000/agendamentos
+Content-Type: application/json
+
+{
+    "usuario_id": 3,
+    "profissional_id": 1,
+    "servico_id": 1,
+    "data_hora_inicio": "2026-08-10 09:00:00"
+}
+
+### tentar criar conflito no mesmo profissional
+POST http://localhost:3000/agendamentos
+Content-Type: application/json
+
+{
+    "usuario_id": 4,
+    "profissional_id": 1,
+    "servico_id": 1,
+    "data_hora_inicio": "2026-08-10 09:20:00"
+}

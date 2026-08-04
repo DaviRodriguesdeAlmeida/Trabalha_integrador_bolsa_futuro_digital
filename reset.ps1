@@ -1,5 +1,9 @@
 $mysql = "C:\xampp\mysql\bin\mysql.exe"
 
+$utf8 = New-Object System.Text.UTF8Encoding($false)
+$OutputEncoding = $utf8
+[Console]::OutputEncoding = $utf8
+
 $arquivosSql = @(
   "database.sql",
   "tables.sql",
@@ -17,7 +21,8 @@ foreach ($nomeArquivo in $arquivosSql) {
 
   Write-Host "Executando: $nomeArquivo"
 
-  Get-Content $arquivoSql -Raw -Encoding UTF8 | & $mysql -u root
+  Get-Content $arquivoSql -Raw -Encoding UTF8 |
+    & $mysql --default-character-set=utf8mb4 -u root
 
   if ($LASTEXITCODE -ne 0) {
     throw "Ocorreu um erro ao executar: $nomeArquivo"

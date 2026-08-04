@@ -1,7 +1,10 @@
 -- USE AGENDA_PRO_BEAUTY;;
 -- Senha padrão dos usuários: 123456
 -- Hash gerado com password_hash('123456', PASSWORD_BCRYPT) no PHP.
-use AGENDA_PRO_BEAUTY;
+SET NAMES utf8mb4;
+SET CHARACTER SET utf8mb4;
+
+USE AGENDA_PRO_BEAUTY;
 INSERT INTO nivel_acesso (id, nome) VALUES
 (1, 'admin'),
 (2, 'atendente'),
